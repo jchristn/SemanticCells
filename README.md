@@ -1,4 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/jchristn/SemanticCells/main/SemanticCells/assets/logo.ico)
+![alt tag](https://github.com/jchristn/SemanticCells/blob/main/assets/logo.ico?raw=true)
 
 # SemanticCells
 
