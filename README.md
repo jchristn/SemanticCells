@@ -1,4 +1,4 @@
-![alt tag](https://github.com/jchristn/SemanticCells/blob/main/assets/logo.ico?raw=true)
+<img src="https://github.com/jchristn/SemanticCells/blob/main/assets/logo.png?raw=true" alt="Logo" width="150" height="150"/>
 
 # SemanticCells
 
