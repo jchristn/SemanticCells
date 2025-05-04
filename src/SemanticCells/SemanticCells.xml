@@ -1,0 +1,630 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SemanticCells</name>
+    </assembly>
+    <members>
+        <member name="T:SemanticCells.BoundingBox">
+            <summary>
+            Bounding box.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.BoundingBox.UpperLeft">
+            <summary>
+            Upper left corner.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.BoundingBox.LowerLeft">
+            <summary>
+            Lower left corner.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.BoundingBox.UpperRight">
+            <summary>
+            Upper right corner.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.BoundingBox.LowerRight">
+            <summary>
+            Lower right corner.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.BoundingBox.Width">
+            <summary>
+            Width.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.BoundingBox.Height">
+            <summary>
+            Height.
+            </summary>
+        </member>
+        <member name="M:SemanticCells.BoundingBox.#ctor">
+            <summary>
+            Bounding box.
+            </summary>
+        </member>
+        <member name="M:SemanticCells.BoundingBox.FromRectangle(System.Drawing.Rectangle)">
+            <summary>
+            Create a bounding box from a rectangle.
+            </summary>
+            <param name="rect">Rectangle.</param>
+            <returns>Bounding box.</returns>
+        </member>
+        <member name="M:SemanticCells.BoundingBox.Contains(System.Int32,System.Int32)">
+            <summary>
+            Check if a point is contained within the bounding box.
+            </summary>
+            <param name="pointX">Point X.</param>
+            <param name="pointY">Point Y.</param>
+            <returns>True if contained within the bounding box.</returns>
+        </member>
+        <member name="M:SemanticCells.BoundingBox.Intersects(SemanticCells.BoundingBox)">
+            <summary>
+            Check if a bounding box intersects with this bounding box.
+            </summary>
+            <param name="other">Another bounding box.</param>
+            <returns>True if the other bounding box intersects with this bounding box.</returns>
+        </member>
+        <member name="M:SemanticCells.BoundingBox.ToString">
+            <summary>
+            Produce a human-readable string of this object.
+            </summary>
+            <returns>String.</returns>
+        </member>
+        <member name="T:SemanticCells.ByteArrayExtensions">
+            <summary>
+            Provides extension methods for byte arrays.
+            </summary>
+        </member>
+        <member name="M:SemanticCells.ByteArrayExtensions.ToHexString(System.Byte[])">
+            <summary>
+            Converts a byte array to a hexadecimal string representation without dashes.
+            </summary>
+            <param name="bytes">The byte array to convert.</param>
+            <returns>A string containing the hexadecimal representation of the byte array.</returns>
+        </member>
+        <member name="M:SemanticCells.ByteArrayExtensions.ToBase64String(System.Byte[])">
+            <summary>
+            Converts a byte array to a Base64 string representation.
+            </summary>
+            <param name="bytes">The byte array to convert.</param>
+            <returns>A Base64 string representation of the byte array.</returns>
+        </member>
+        <member name="T:SemanticCells.DataTableHelper">
+            <summary>
+            DataTable helpers.
+            </summary>
+        </member>
+        <member name="M:SemanticCells.DataTableHelper.GetLength(System.Data.DataTable)">
+            <summary>
+            Calculate DataTable length.
+            This calculation adds the length of column names and row values.
+            </summary>
+            <param name="dt">DataTable.</param>
+            <returns>Length.</returns>
+        </member>
+        <member name="T:SemanticCells.HashHelper">
+            <summary>
+            Hash methods.
+            </summary>
+        </member>
+        <member name="M:SemanticCells.HashHelper.MD5Hash(System.Byte[])">
+            <summary>
+            Generate an MD5 hash.
+            </summary>
+            <param name="data">Data.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.MD5Hash(System.IO.Stream)">
+            <summary>
+            Generate an MD5 hash.
+            </summary>
+            <param name="stream">Stream.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.MD5Hash(System.String)">
+            <summary>
+            Generate an MD5 hash of a string.
+            </summary>
+            <param name="str">String.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.MD5Hash(System.Collections.Generic.List{System.String})">
+            <summary>
+            Generate an MD5 hash of a list of strings.
+            </summary>
+            <param name="strings">Strings.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.MD5Hash(System.Data.DataTable)">
+            <summary>
+            Generate an MD5 hash of a DataTable.
+            This method concatenates column names (separated by a null character) and all cell values (separated by a null character).  Any null cells have their value replaced with the string NULL.
+            </summary>
+            <param name="dt">DataTable.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.MD5Hash(System.Object)">
+            <summary>
+            Generate an MD5 hash of an object.  The object must be serializable to JSON.
+            </summary>
+            <param name="obj">Object.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.MD5Hash(System.Collections.Generic.List{System.Object})">
+            <summary>
+            Generate an MD5 hash of a list of objects.  The objects in the list must be serializable to JSON.
+            </summary>
+            <param name="obj">Object.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA1Hash(System.Byte[])">
+            <summary>
+            Generate a SHA1 hash of a byte array.
+            </summary>
+            <param name="data">Data.</param>
+            <returns>SHA1 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA1Hash(System.IO.Stream)">
+            <summary>
+            Generate a SHA1 hash.
+            </summary>
+            <param name="stream">Stream.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA1Hash(System.String)">
+            <summary>
+            Generate a SHA1 hash of a string.
+            </summary>
+            <param name="str">String.</param>
+            <returns>SHA1 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA1Hash(System.Collections.Generic.List{System.String})">
+            <summary>
+            Generate a SHA1 hash of a list of strings.
+            </summary>
+            <param name="strings">Strings.</param>
+            <returns>SHA1 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA1Hash(System.Data.DataTable)">
+            <summary>
+            Generate a SHA1 hash of a DataTable.
+            This method concatenates column names (separated by a null character) and all cell values (separated by a null character).  Any null cells have their value replaced with the string NULL.
+            </summary>
+            <param name="dt">DataTable. </param>
+            <returns>SHA1 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA1Hash(System.Object)">
+            <summary>
+            Generate a SHA1 hash of an object.  The object must be serializable to JSON.
+            </summary>
+            <param name="obj">Object.</param>
+            <returns>SHA1 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA1Hash(System.Collections.Generic.List{System.Object})">
+            <summary>
+            Generate a SHA1 hash of a list of objects.  The objects in the list must be serializable to JSON.
+            </summary>
+            <param name="obj">Object.</param>
+            <returns>SHA1 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA256Hash(System.Byte[])">
+            <summary>
+            Generate a SHA256 hash of a byte array.
+            </summary>
+            <param name="data">Data.</param>
+            <returns>SHA256 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA256Hash(System.IO.Stream)">
+            <summary>
+            Generate a SHA256 hash.
+            </summary>
+            <param name="stream">Stream.</param>
+            <returns>MD5 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA256Hash(System.String)">
+            <summary>
+            Generate a SHA256 hash of a string.
+            </summary>
+            <param name="str">String.</param>
+            <returns>SHA256 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA256Hash(System.Collections.Generic.List{System.String})">
+            <summary>
+            Generate a SHA256 hash of a list of strings.
+            </summary>
+            <param name="strings">Strings.</param>
+            <returns>SHA256 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA256Hash(System.Data.DataTable)">
+            <summary>
+            Generate a SHA256 hash of a DataTable.
+            This method concatenates column names (separated by a null character) and all cell values (separated by a null character).  Any null cells have their value replaced with the string NULL.
+            </summary>
+            <param name="dt">DataTable. </param>
+            <returns>SHA256 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA256Hash(System.Object)">
+            <summary>
+            Generate a SHA256 hash of an object.  The object must be serializable to JSON.
+            </summary>
+            <param name="obj">Object.</param>
+            <returns>SHA256 hash.</returns>
+        </member>
+        <member name="M:SemanticCells.HashHelper.SHA256Hash(System.Collections.Generic.List{System.Object})">
+            <summary>
+            Generate a SHA256 hash of a list of objects.  The objects in the list must be serializable to JSON.
+            </summary>
+            <param name="obj">Object.</param>
+            <returns>SHA256 hash.</returns>
+        </member>
+        <member name="T:SemanticCells.SemanticCell">
+            <summary>
+            A semantic cell is a node that contains semantically-correlated data.  
+            Semantic cells can be nested into a hierarchy using the 'Children' property.
+            Cell contents can be chunked and then stored in the 'Chunks' property.
+            Semantic cell objects are not thread-safe.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.GUID">
+            <summary>
+            GUID.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.CreatedUtc">
+            <summary>
+            Timestamp in UTC time from creation.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.CellType">
+            <summary>
+            Semantic cell type.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.MD5Hash">
+            <summary>
+            MD5 hash.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.SHA1Hash">
+            <summary>
+            SHA1 hash.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.SHA256Hash">
+            <summary>
+            SHA256 hash.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.Position">
+            <summary>
+            Position.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.Length">
+            <summary>
+            Length.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.BoundingBox">
+            <summary>
+            Bounding box.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.Binary">
+            <summary>
+            Binary data.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.Content">
+            <summary>
+            Content.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.UnorderedList">
+            <summary>
+            Unordered list elements.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.OrderedList">
+            <summary>
+            Ordered list elements.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.Table">
+            <summary>
+            Data table.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.Object">
+            <summary>
+            Object of semi-structured data such as JSON or XML.  The supplied object must be JSON serializable.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.Array">
+            <summary>
+            Array of semi-structured data such as JSON or XML.  The supplied list must contain objects that are JSON serializable.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.Chunks">
+            <summary>
+            Chunks.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.Children">
+            <summary>
+            Children.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticCell.Metadata">
+            <summary>
+            User-supplied metadata.
+            </summary>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.#ctor">
+            <summary>
+            A semantic cell is a node that contains semantically-correlated data.  
+            Semantic cells can be nested into a hierarchy using the 'Children' property.
+            Cell contents can be chunked and then stored in the 'Chunks' property.
+            </summary>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.AllCells(System.Collections.Generic.List{SemanticCells.SemanticCell})">
+            <summary>
+            Retrieve all semantic cells in a list through recursion.
+            </summary>
+            <param name="cells">Semantic cells.</param>
+            <returns>Semantic cells.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.AllCellsWithChunks(System.Collections.Generic.List{SemanticCells.SemanticCell})">
+            <summary>
+            Retrieve all semantic cells with chunks from a list through recursion.
+            </summary>
+            <param name="cells">Semantic cells.</param>
+            <returns>Semantic cells.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.AllChunks(System.Collections.Generic.List{SemanticCells.SemanticCell})">
+            <summary>
+            Retrieve all semantic chunks.
+            </summary>
+            <param name="cells">Semantic cells.</param>
+            <returns>Semantic chunks.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.AllChunksBySHA256(System.Collections.Generic.List{SemanticCells.SemanticCell},System.Byte[])">
+            <summary>
+            Retrieve all semantic chunks matching a given SHA-256 value.
+            </summary>
+            <param name="cells">Semantic cells.</param>
+            <param name="sha256Hash">SHA-256.</param>
+            <returns>Semantic chunks.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.Equals(SemanticCells.SemanticCell)">
+            <summary>
+            Determine equality with another cell.
+            </summary>
+            <param name="cell">Semantic cell.</param>
+            <returns>True if equal.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.Equals(System.Object)">
+            <summary>
+            Determine equality with another object.
+            </summary>
+            <param name="obj">Object.</param>
+            <returns>True if equal.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.GetHashCode">
+            <summary>
+            Retrieve hash code.
+            </summary>
+            <returns>Hash code.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.CountEmbeddings(System.Collections.Generic.List{SemanticCells.SemanticCell})">
+            <summary>
+            Count the number of embeddings in a list of semantic cells.
+            </summary>
+            <param name="cells">Semantic cells.</param>
+            <returns>Number of embeddings.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.CountSemanticCells(System.Collections.Generic.List{SemanticCells.SemanticCell})">
+            <summary>
+            Count the number of semantic cells in a list of semantic cells.
+            </summary>
+            <param name="cells">Semantic cells.</param>
+            <returns>Number of semantic cells.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.CountSemanticChunks(System.Collections.Generic.List{SemanticCells.SemanticCell})">
+            <summary>
+            Count the number of semantic chunks in a list of semantic cells.
+            </summary>
+            <param name="cells">Semantic cells.</param>
+            <returns>Number of chunks.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.CountBytes(System.Collections.Generic.List{SemanticCells.SemanticCell})">
+            <summary>
+            Count the number of bytes in chunks within a list of semantic cells.
+            </summary>
+            <param name="cells">Semantic cells.</param>
+            <returns>Number of bytes.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.CountSemanticCells">
+            <summary>
+            Count the number of semantic cells in this semantic cell.
+            </summary>
+            <returns>Number of semantic cells.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.CountEmbeddings">
+            <summary>
+            Count the number of embeddings contained within the semantic cell.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.CountBytes">
+            <summary>
+            Count the number of bytes contained within chunks within the semantic cell.
+            </summary>
+            <returns>Number of bytes.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.GetDistinctSHA256Hashes">
+            <summary>
+            Retrieve the distinct SHA-256 hash values from the chunks contained within in this cell and its children.
+            </summary>
+            <returns>SHA-256 hash values.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.GetDistinctSHA256Hashes(System.Collections.Generic.IEnumerable{SemanticCells.SemanticCell})">
+            <summary>
+            Retrieve the distinct SHA-256 hash values from the chunks contained within a list of semantic cells and their children.
+            </summary>
+            <param name="cells">Semantic cells.</param>
+            <returns>SHA-256 hash values.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticCell.FindCellsWithChunks(System.Collections.Generic.List{SemanticCells.SemanticCell})">
+            <summary>
+            Retrieve semantic cells that contain chunks.
+            </summary>
+            <param name="cells">Semantic cells.</param>
+            <returns>Enumerable of cells that contain chunks.</returns>
+        </member>
+        <member name="T:SemanticCells.SemanticCellTypeEnum">
+            <summary>
+            Semantic cell type.
+            </summary>
+        </member>
+        <member name="F:SemanticCells.SemanticCellTypeEnum.Text">
+            <summary>
+            Text.
+            </summary>
+        </member>
+        <member name="F:SemanticCells.SemanticCellTypeEnum.Table">
+            <summary>
+            Table.
+            </summary>
+        </member>
+        <member name="F:SemanticCells.SemanticCellTypeEnum.UnorderedList">
+            <summary>
+            UnorderedList.
+            </summary>
+        </member>
+        <member name="F:SemanticCells.SemanticCellTypeEnum.OrderedList">
+            <summary>
+            OrderedList.
+            </summary>
+        </member>
+        <member name="F:SemanticCells.SemanticCellTypeEnum.Binary">
+            <summary>
+            Binary.
+            </summary>
+        </member>
+        <member name="F:SemanticCells.SemanticCellTypeEnum.Object">
+            <summary>
+            Object.
+            </summary>
+        </member>
+        <member name="F:SemanticCells.SemanticCellTypeEnum.Array">
+            <summary>
+            Array.
+            </summary>
+        </member>
+        <member name="T:SemanticCells.SemanticChunk">
+            <summary>
+            A semantic chunk is a portion of the data found within a semantic cell.
+            Chunks are normally determined based on a variety of different situations including language model limitations, semantic boundaries, or logical sub-grouping within a cell.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.GUID">
+            <summary>
+            GUID.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.CreatedUtc">
+            <summary>
+            Timestamp in UTC time from creation.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.MD5Hash">
+            <summary>
+            MD5 hash.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.SHA1Hash">
+            <summary>
+            SHA1 hash.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.SHA256Hash">
+            <summary>
+            SHA256 hash.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.Position">
+            <summary>
+            Position.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.Start">
+            <summary>
+            Start position.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.End">
+            <summary>
+            End position.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.Length">
+            <summary>
+            Length.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.BoundingBox">
+            <summary>
+            Bounding box.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.Binary">
+            <summary>
+            Binary data.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.Content">
+            <summary>
+            Content.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.Embeddings">
+            <summary>
+            Embeddings.
+            </summary>
+        </member>
+        <member name="P:SemanticCells.SemanticChunk.Metadata">
+            <summary>
+            User-supplied metadata.
+            </summary>
+        </member>
+        <member name="M:SemanticCells.SemanticChunk.#ctor">
+            <summary>
+            A semantic chunk is a portion of the data found within a semantic cell.
+            Chunks are normally determined based on a variety of different situations including language model limitations, semantic boundaries, or logical sub-grouping within a cell.
+            </summary>
+        </member>
+        <member name="M:SemanticCells.SemanticChunk.Equals(SemanticCells.SemanticChunk)">
+            <summary>
+            Determine equality with another chunk.
+            </summary>
+            <param name="chunk">Semantic chunk.</param>
+            <returns>True if equal.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticChunk.Equals(System.Object)">
+            <summary>
+            Determine equality with another object.
+            </summary>
+            <param name="obj">Object.</param>
+            <returns>True if equal.</returns>
+        </member>
+        <member name="M:SemanticCells.SemanticChunk.GetHashCode">
+            <summary>
+            Retrieve hash code.
+            </summary>
+            <returns>Hash code.</returns>
+        </member>
+    </members>
+</doc>

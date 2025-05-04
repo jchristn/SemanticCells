@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticCells", "SemanticCells\SemanticCells.csproj", "{2A33B9D6-B94F-4E5E-83E7-14B4AACCAB1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.SemanticCells", "Test.SemanticCells\Test.SemanticCells.csproj", "{B03AB2FA-03EA-4436-9AC5-0284E6332462}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Readme", "Test.Readme\Test.Readme.csproj", "{8A15AA5D-6C39-41C9-AB47-44E79619CA7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A33B9D6-B94F-4E5E-83E7-14B4AACCAB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A33B9D6-B94F-4E5E-83E7-14B4AACCAB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A33B9D6-B94F-4E5E-83E7-14B4AACCAB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A33B9D6-B94F-4E5E-83E7-14B4AACCAB1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B03AB2FA-03EA-4436-9AC5-0284E6332462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03AB2FA-03EA-4436-9AC5-0284E6332462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03AB2FA-03EA-4436-9AC5-0284E6332462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03AB2FA-03EA-4436-9AC5-0284E6332462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A15AA5D-6C39-41C9-AB47-44E79619CA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A15AA5D-6C39-41C9-AB47-44E79619CA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A15AA5D-6C39-41C9-AB47-44E79619CA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A15AA5D-6C39-41C9-AB47-44E79619CA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
