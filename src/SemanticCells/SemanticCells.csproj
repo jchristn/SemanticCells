@@ -6,7 +6,7 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DocumentationFile>SemanticCells.xml</DocumentationFile>
 		<Title>Semantic cells are data structures useful for parsing and organizing content for use in AI and analytics</Title>
-		<Version>0.1.0</Version>
+		<Version>0.1.1</Version>
 		<Authors>Joel Christner</Authors>
 		<Description>Semantic cells are data structures useful for parsing and organizing content for use in AI and analytics</Description>
 		<Copyright>(c)2025 Joel Christner</Copyright>
